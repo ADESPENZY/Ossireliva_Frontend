@@ -18,7 +18,6 @@ import ProtectedRoute from "./ProtectedRoute"
 import { TransactionsPage } from "@/pages/admin/AdminTransactionPage"
 import { AdminSettings } from "@/pages/admin/AdminSettings"
 import type { JSX } from "react/jsx-runtime"
-import ScrollToTop from "@/components/ScrollToTop"
 
 export default function AppRouter() {
   const AdminOnly = ({ children, user, isLoading }: { children: JSX.Element; user: any; isLoading: boolean }) => {
@@ -34,7 +33,6 @@ export default function AppRouter() {
 
   return (
     <Routes>
-      <ScrollToTop />
       {/* PUBLIC */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />

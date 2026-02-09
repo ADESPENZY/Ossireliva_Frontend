@@ -22,7 +22,7 @@ export const AdminProductsSection = () => {
 
   return (
     <div className="space-y-10">
-      {products.map((product: any) => (
+      {products?.map((product: any) => (
         <div key={product.id} className="space-y-6">
           <h3 className="text-2xl font-semibold">{product.name}</h3>
 
@@ -30,7 +30,7 @@ export const AdminProductsSection = () => {
             <ProductVariantCard
               key={variant.id}
               variant={variant}
-              onSave={(data) =>
+              onSave={(data: any) => 
                 mutation.mutate({ id: variant.id, data })
               }
             />

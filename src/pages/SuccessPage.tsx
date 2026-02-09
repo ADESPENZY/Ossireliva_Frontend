@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export const SuccessPage = () => {
   const [params] = useSearchParams();
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const pi = params.get("pi");
 
   // Get order number from navigation state (passed from Checkout) or default to placeholder

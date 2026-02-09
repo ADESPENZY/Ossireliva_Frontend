@@ -128,7 +128,7 @@ export const CheckoutPage = () => {
 
   const [clientSecret, setClientSecret] = useState<string | null>(null)
   const [orderNumber, setOrderNumber] = useState<string | null>(null)
-  const [paymentIntentId, setPaymentIntentId] = useState<string | null>(null)
+  const [_paymentIntentId, setPaymentIntentId] = useState<string | null>(null)
 
   const {
     register,

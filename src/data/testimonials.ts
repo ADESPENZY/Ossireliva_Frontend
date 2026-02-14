@@ -10,7 +10,7 @@ export interface VideoTestimonial {
 export const VIDEO_TESTIMONIALS = [
   {
   id: 1,
-  video: "https://ossireliva-media.s3.us-east-2.amazonaws.com/ossireliva-media/Ossileriva_Testimonial_5.mp4",
+  video: "https://ossireliva-media.s3.us-east-2.amazonaws.com/ossireliva-media/Ossireliva1.mp4",
   name: "Aimi S.",
   country: "Japan",
   variant: "Lemongrass",

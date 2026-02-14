@@ -15,21 +15,17 @@ export const FeaturedTestimonialsSection = () => {
 
       if (i === index) {
         if (video.paused) {
-          video.currentTime = 0;
-          video.muted = false;
+          // 1. Force the video to be unmuted before playing
+          video.muted = false; 
           video.play();
           setPlayingIndex(index);
-
-          setTimeout(() => {
-            video.muted = true;
-          }, 2000);
         } else {
           video.pause();
           setPlayingIndex(null);
         }
       } else {
+        // 2. Pause other videos if they were playing
         video.pause();
-        video.muted = true;
       }
     });
   };
@@ -83,12 +79,22 @@ export const FeaturedTestimonialsSection = () => {
                 className="relative h-52 cursor-pointer"
                 onClick={() => togglePlay(index)}
               >
-                <video
+                {/* <video
                   ref={(el) => {
                     if (el) videoRefs.current[index] = el;
                   }}
                   src={item.video}
                   muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                /> */}
+
+                <video
+                  ref={(el) => {
+                    if (el) videoRefs.current[index] = el;
+                  }}
+                  src={item.video}
+                  muted 
                   playsInline
                   className="w-full h-full object-cover"
                 />

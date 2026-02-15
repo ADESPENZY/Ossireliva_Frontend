@@ -11,6 +11,14 @@ export interface AdminOrder {
   address: string
 }
 
+export interface DashboardStats {
+  revenue: number;
+  orders_count: number;
+  products_count: number;
+  customers_count: number;
+  sales_history: { month: string; sales: number }[];
+}
+
 export const createOrder = async (data: any) => {
   const res = await api.post("/api/checkout/", data)
   return res.data
@@ -36,3 +44,8 @@ export const updateOrderStatus = async (
   )
   return res.data
 }
+
+export const getDashboardStats = async (): Promise<DashboardStats> => {
+  const res = await api.get("/api/orders/dashboard-stats/");
+  return res.data;
+};

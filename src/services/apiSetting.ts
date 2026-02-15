@@ -27,9 +27,9 @@ export const resetMemberPassword = async (id: number, password: any) => {
 
 // 4. Owner changing their own password
 export const updateOwnPassword = async (data: any) => {
-  const res = await api.post("/api/auth/change-my-password/", data)
-  return res.data
-}
+  const res = await api.post("/api/auth/me/", data); 
+  return res.data;
+};
 
 export const deleteTeamMember = async (id: number) => {
   await api.delete(`/api/auth/team/${id}/`)

@@ -45,7 +45,7 @@ export const updateOrderStatus = async (
   return res.data
 }
 
-export const getDashboardStats = async (): Promise<DashboardStats> => {
-  const res = await api.get("/api/orders/dashboard-stats/");
+export const getDashboardStats = async () => {
+  const res = await api.get("/api/orders/admin/orders/dashboard-stats/"); 
   return res.data;
 };
